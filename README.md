@@ -1,7 +1,8 @@
 # MSA Demo
 
-The purpose of this project is to practice MSA-oriented development.
-This project was developed considering the following items.
+This project is a virtual payment system project created to learn MSA-related technologies.
+
+This project covers the following technologies:
 1. Hexagonal Architecture
 2. Domain Driven Design
 3. Event Driven Architecture
