@@ -1,8 +1,8 @@
 package com.spark.membership.adapter.in.web;
 
+import com.spark.common.WebAdapter;
 import com.spark.membership.application.port.in.FindMembershipCommand;
 import com.spark.membership.application.port.in.FindMembershipUseCase;
-import com.spark.membership.common.WebAdapter;
 import com.spark.membership.domain.Membership;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

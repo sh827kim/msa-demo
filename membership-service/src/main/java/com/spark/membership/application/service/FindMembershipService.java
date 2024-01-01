@@ -1,11 +1,11 @@
 package com.spark.membership.application.service;
 
 
+import com.spark.common.UseCase;
 import com.spark.membership.adapter.out.persistence.MembershipMapper;
 import com.spark.membership.application.port.in.FindMembershipCommand;
 import com.spark.membership.application.port.in.FindMembershipUseCase;
 import com.spark.membership.application.port.out.FindMembershipPort;
-import com.spark.membership.common.UseCase;
 import com.spark.membership.domain.Membership;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;

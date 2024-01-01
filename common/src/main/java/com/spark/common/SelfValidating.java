@@ -1,4 +1,4 @@
-package com.spark.membership.common;
+package com.spark.common;
 
 import jakarta.validation.*;
 

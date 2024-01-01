@@ -31,4 +31,28 @@ public class MembershipEntity {
         this.isCorp = isCorp;
         this.isValid = isValid;
     }
+
+    public void changeName(String name) {
+        if (isChanged(name, this.name)) this.name = name;
+    }
+
+    public void changeEmail(String email) {
+        if (isChanged(email, this.email)) this.email = email;
+    }
+
+    public void changeAddress(String address) {
+        if (isChanged(address, this.address)) this.address = address;
+    }
+
+    public void changeIsCorp(boolean isCorp) {
+        if (this.isCorp != isCorp) this.isCorp = isCorp;
+    }
+
+    public void changeIsValid(boolean isValid) {
+        if (this.isValid != isValid) this.isValid = isValid;
+    }
+
+    private boolean isChanged(String target, String value) {
+        return target != null && !target.isEmpty() && !target.equals(value);
+    }
 }

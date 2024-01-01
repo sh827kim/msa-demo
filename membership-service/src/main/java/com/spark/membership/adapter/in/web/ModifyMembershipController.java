@@ -1,8 +1,9 @@
 package com.spark.membership.adapter.in.web;
 
+
 import com.spark.common.WebAdapter;
-import com.spark.membership.application.port.in.RegisterMembershipCommand;
-import com.spark.membership.application.port.in.RegisterMembershipUseCase;;
+import com.spark.membership.application.port.in.ModifyMembershipCommand;
+import com.spark.membership.application.port.in.ModifyMembershipUseCase;
 import com.spark.membership.domain.Membership;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @WebAdapter
 @RestController
 @RequiredArgsConstructor
-public class RegisterMembershipController {
+public class ModifyMembershipController {
+    private final ModifyMembershipUseCase modifyMembershipUseCase;
 
-    private final RegisterMembershipUseCase registerMembershipUseCase;
+    @PostMapping("/membership/modify")
+    public ResponseEntity<Membership> modifyMembership(@RequestBody ModifyMembershipRequest request) {
 
-    @PostMapping("/membership/register")
-    public ResponseEntity<Membership> registerMembership(@RequestBody RegisterMembershipRequest request) {
-
-        RegisterMembershipCommand command = RegisterMembershipCommand.builder()
+        ModifyMembershipCommand command = ModifyMembershipCommand.builder()
+                .membershipId(request.getMembershipId())
                 .name(request.getName())
                 .email(request.getEmail())
                 .address(request.getAddress())
@@ -28,6 +29,6 @@ public class RegisterMembershipController {
                 .isCorp(request.isCorp())
                 .build();
 
-        return ResponseEntity.ok(registerMembershipUseCase.registerMembership(command));
+        return ResponseEntity.ok(modifyMembershipUseCase.modifyMembership(command));
     }
 }
